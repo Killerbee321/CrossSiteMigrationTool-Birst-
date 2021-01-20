@@ -1,0 +1,48 @@
+# Input Configurations
+username = proxyuser/syed.khadri@infor.com/hcmcontent
+password = 
+result_log_file = log_bu_rep_dev.txt
+output_mode = SHOW
+backup_mode = REPOHCM
+repo_base_url = http://192.168.0.131/svn/HCM/
+#http://192.168.0.131:8080/svn/HCM/
+#http://INHYNSKHADRI1.infor.com/svn/CSF/
+repo_svn_dir = BackUp Repo files
+
+urls = https://app2103.bws.birst.com, https://app2103.eu1.birst.com, https://app2103.apac1.birst.com, https://app2103.apac2.birst.com, https://login.cn1.birst.com, https://koch.bws.birst.com
+
+regions = US, EU1, APAC1, APAC2, CN1, KOCH
+
+#Connection GUIDS
+#       #US                                   #EU1                                  #APAC1                                #APAC2                                 #CN1                                 #KOCH
+guids = 6dcc2f61-c848-4bf9-a8bd-d5504f996fbf, e55d63bb-4d11-43e3-89d7-30b3dde68cef, 16bff0e4-253b-4017-b03f-c599db2bd743, eadda9de-b6f8-4c59-9e21-65671ec22c61, ea77a781-69eb-4f66-ba16-b630571fa591, 6dcc2f61-c848-4bf9-a8bd-d5504f996fbf
+
+# Email Configurations
+mail_server = smtp-mail.outlook.com
+mail_sender = syed.khadri@infor.com
+mail_password = 
+b2s_mailrecipients = syed.khadri@infor.com
+ufs_mailrecipients = syed.khadri@infor.com
+
+
+# Backup/Upload Repo file for Gold Spaces
+copy_from = REPOCSF, CSF Gold 11_0_8_1
+copy_from_spaces = REPOCSF, Extension, Security, GL_Source, Source, Source_MSCM, GL_Cnfrm_Dim, Model, ORD_Model, MSCM_Model, FIN_Model, GL_Measures, TC_Clinical, Consumer
+copy_to = REPOCSF, CSF Gold 11_0_8_1
+copy_format = REPOCSF, copy_to, copy_from, copy_from_spaces
+copy_url = REPOCSF, https://app2103.bws.birst.com, https://app2103.eu1.birst.com
+
+
+# Backup/Upload Repo file for Gold Spaces
+copy_from = REPOHCM,
+copy_from_spaces = REPOHCM, Copy of HCM_11_0_6_1_Consumer_Golden
+copy_to = REPOHCM, copy_of
+copy_format = REPOHCM, copy_to, copy_from, copy_from_spaces
+copy_url = REPOHCM, https://app2103.bws.birst.com, https://app2103.apac2.birst.com
+
+# Backup/Upload Repo file for Gold Spaces
+copy_from = REPODEV,
+copy_from_spaces = REPODEV, GHRBS1AHY4_AX1-HCM-Model-Extension,GHRBS1AHY4_AX1-HCM-Source,GHRBS1AHY4_AX1-HCM-Model-Security,GHRBS1AHY4_AX1-HCM-Model,GHRBS1AHY4_AX1-HCM-Consumer
+copy_to = REPODEV, copy_of
+copy_format = REPODEV, copy_to, copy_from_spaces
+copy_url = REPODEV, https://app2103.bws.birst.com, https://app2103.apac1.birst.com
